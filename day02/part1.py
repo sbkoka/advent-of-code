@@ -1,14 +1,15 @@
 
 num_safe = 0
+
 with open("input.txt", "r") as file:
     for line in file:
-        levels = line.split(" ")
+        levels = [int(x) for x in line.split(" ")]
         increasing = True
         safe = True
         
         for i in range(1, len(levels)):
-            level = int(levels[i])
-            prev = int(levels[i - 1])
+            level = levels[i]
+            prev = levels[i - 1]
             if i == 1:
                 if prev < level:
                     increasing = True
